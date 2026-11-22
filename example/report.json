@@ -1,0 +1,411 @@
+{
+  "dataset": "pneumoniamnist",
+  "fallback_reason": null,
+  "seed": 42,
+  "epochs": 8,
+  "training_cases": 4708,
+  "reference_cases": 300,
+  "reference_metrics": {
+    "positive_rate": 0.6233333333333333,
+    "accuracy": 0.9233333333333333,
+    "auroc": 0.9749074074074073,
+    "kappa": 0.8387096774193549
+  },
+  "config": {
+    "drift_week": 5,
+    "deployment_weeks": 8,
+    "batch_size": 48,
+    "review_size": 24,
+    "label_delay_weeks": 1,
+    "target_prevalence_before": 0.6,
+    "target_prevalence_after": 0.3,
+    "prediction_cutoff": 0.5,
+    "bootstrap_draws": 400,
+    "embedding_pca_components": 4
+  },
+  "thresholds": {
+    "confidence_ks": {
+      "high": 0.19166663587093352
+    },
+    "positive_rate": {
+      "low": 0.4994791666666667,
+      "high": 0.75
+    },
+    "embedding_ks": {
+      "high": 0.2225416928529739
+    },
+    "accuracy": {
+      "low": 0.8333333333333334
+    },
+    "auroc": {
+      "low": 0.9214285714285714
+    },
+    "kappa": {
+      "low": 0.6277616279069768
+    }
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "batch": {
+        "n": 48,
+        "metrics": {
+          "confidence_ks": 0.11749999225139618,
+          "positive_rate": 0.6458333333333334,
+          "embedding_ks": 0.1850000023841858
+        }
+      },
+      "review": null
+    },
+    {
+      "week": 2,
+      "batch": {
+        "n": 48,
+        "metrics": {
+          "confidence_ks": 0.09250003099441528,
+          "positive_rate": 0.7083333333333334,
+          "embedding_ks": 0.15333330631256104
+        }
+      },
+      "review": {
+        "source_week": 1,
+        "n": 24,
+        "metrics": {
+          "accuracy": 0.7083333333333334,
+          "auroc": 0.875,
+          "kappa": 0.36363636363636365
+        }
+      }
+    },
+    {
+      "week": 3,
+      "batch": {
+        "n": 48,
+        "metrics": {
+          "confidence_ks": 0.23416665196418762,
+          "positive_rate": 0.625,
+          "embedding_ks": 0.1899999976158142
+        }
+      },
+      "review": {
+        "source_week": 2,
+        "n": 24,
+        "metrics": {
+          "accuracy": 0.875,
+          "auroc": 0.9453125,
+          "kappa": 0.7096774193548387
+        }
+      }
+    },
+    {
+      "week": 4,
+      "batch": {
+        "n": 48,
+        "metrics": {
+          "confidence_ks": 0.12333330512046814,
+          "positive_rate": 0.6458333333333334,
+          "embedding_ks": 0.2316666692495346
+        }
+      },
+      "review": {
+        "source_week": 3,
+        "n": 24,
+        "metrics": {
+          "accuracy": 0.75,
+          "auroc": 0.7703703703703704,
+          "kappa": 0.4666666666666667
+        }
+      }
+    },
+    {
+      "week": 5,
+      "batch": {
+        "n": 48,
+        "metrics": {
+          "confidence_ks": 0.46166667342185974,
+          "positive_rate": 0.6875,
+          "embedding_ks": 0.9700000286102295
+        }
+      },
+      "review": {
+        "source_week": 4,
+        "n": 24,
+        "metrics": {
+          "accuracy": 0.9166666666666666,
+          "auroc": 0.993006993006993,
+          "kappa": 0.8297872340425532
+        }
+      }
+    },
+    {
+      "week": 6,
+      "batch": {
+        "n": 48,
+        "metrics": {
+          "confidence_ks": 0.550000011920929,
+          "positive_rate": 0.625,
+          "embedding_ks": 0.9666666388511658
+        }
+      },
+      "review": {
+        "source_week": 5,
+        "n": 24,
+        "metrics": {
+          "accuracy": 0.5833333333333334,
+          "auroc": 0.8240740740740741,
+          "kappa": 0.2857142857142857
+        }
+      }
+    },
+    {
+      "week": 7,
+      "batch": {
+        "n": 48,
+        "metrics": {
+          "confidence_ks": 0.5116666555404663,
+          "positive_rate": 0.5625,
+          "embedding_ks": 0.9691666960716248
+        }
+      },
+      "review": {
+        "source_week": 6,
+        "n": 24,
+        "metrics": {
+          "accuracy": 0.5833333333333334,
+          "auroc": 0.8403361344537815,
+          "kappa": 0.24528301886792447
+        }
+      }
+    },
+    {
+      "week": 8,
+      "batch": {
+        "n": 48,
+        "metrics": {
+          "confidence_ks": 0.5183333158493042,
+          "positive_rate": 0.6041666666666666,
+          "embedding_ks": 0.9516666531562805
+        }
+      },
+      "review": {
+        "source_week": 7,
+        "n": 24,
+        "metrics": {
+          "accuracy": 0.625,
+          "auroc": 0.6953125,
+          "kappa": 0.2702702702702702
+        }
+      }
+    },
+    {
+      "week": 9,
+      "batch": null,
+      "review": {
+        "source_week": 8,
+        "n": 24,
+        "metrics": {
+          "accuracy": 0.625,
+          "auroc": 0.7578125,
+          "kappa": 0.3076923076923077
+        }
+      }
+    }
+  ],
+  "monitors": {
+    "confidence_ks": {
+      "alerts": [
+        {
+          "week": 3,
+          "source_week": 3,
+          "value": 0.23416665196418762
+        },
+        {
+          "week": 5,
+          "source_week": 5,
+          "value": 0.46166667342185974
+        },
+        {
+          "week": 6,
+          "source_week": 6,
+          "value": 0.550000011920929
+        },
+        {
+          "week": 7,
+          "source_week": 7,
+          "value": 0.5116666555404663
+        },
+        {
+          "week": 8,
+          "source_week": 8,
+          "value": 0.5183333158493042
+        }
+      ],
+      "first_drift_alert": {
+        "week": 5,
+        "source_week": 5,
+        "value": 0.46166667342185974
+      },
+      "detection_delay_weeks": 0
+    },
+    "positive_rate": {
+      "alerts": [],
+      "first_drift_alert": null,
+      "detection_delay_weeks": null
+    },
+    "embedding_ks": {
+      "alerts": [
+        {
+          "week": 4,
+          "source_week": 4,
+          "value": 0.2316666692495346
+        },
+        {
+          "week": 5,
+          "source_week": 5,
+          "value": 0.9700000286102295
+        },
+        {
+          "week": 6,
+          "source_week": 6,
+          "value": 0.9666666388511658
+        },
+        {
+          "week": 7,
+          "source_week": 7,
+          "value": 0.9691666960716248
+        },
+        {
+          "week": 8,
+          "source_week": 8,
+          "value": 0.9516666531562805
+        }
+      ],
+      "first_drift_alert": {
+        "week": 5,
+        "source_week": 5,
+        "value": 0.9700000286102295
+      },
+      "detection_delay_weeks": 0
+    },
+    "accuracy": {
+      "alerts": [
+        {
+          "week": 2,
+          "source_week": 1,
+          "value": 0.7083333333333334
+        },
+        {
+          "week": 4,
+          "source_week": 3,
+          "value": 0.75
+        },
+        {
+          "week": 6,
+          "source_week": 5,
+          "value": 0.5833333333333334
+        },
+        {
+          "week": 7,
+          "source_week": 6,
+          "value": 0.5833333333333334
+        },
+        {
+          "week": 8,
+          "source_week": 7,
+          "value": 0.625
+        },
+        {
+          "week": 9,
+          "source_week": 8,
+          "value": 0.625
+        }
+      ],
+      "first_drift_alert": {
+        "week": 6,
+        "source_week": 5,
+        "value": 0.5833333333333334
+      },
+      "detection_delay_weeks": 1
+    },
+    "auroc": {
+      "alerts": [
+        {
+          "week": 2,
+          "source_week": 1,
+          "value": 0.875
+        },
+        {
+          "week": 4,
+          "source_week": 3,
+          "value": 0.7703703703703704
+        },
+        {
+          "week": 6,
+          "source_week": 5,
+          "value": 0.8240740740740741
+        },
+        {
+          "week": 7,
+          "source_week": 6,
+          "value": 0.8403361344537815
+        },
+        {
+          "week": 8,
+          "source_week": 7,
+          "value": 0.6953125
+        },
+        {
+          "week": 9,
+          "source_week": 8,
+          "value": 0.7578125
+        }
+      ],
+      "first_drift_alert": {
+        "week": 6,
+        "source_week": 5,
+        "value": 0.8240740740740741
+      },
+      "detection_delay_weeks": 1
+    },
+    "kappa": {
+      "alerts": [
+        {
+          "week": 2,
+          "source_week": 1,
+          "value": 0.36363636363636365
+        },
+        {
+          "week": 4,
+          "source_week": 3,
+          "value": 0.4666666666666667
+        },
+        {
+          "week": 6,
+          "source_week": 5,
+          "value": 0.2857142857142857
+        },
+        {
+          "week": 7,
+          "source_week": 6,
+          "value": 0.24528301886792447
+        },
+        {
+          "week": 8,
+          "source_week": 7,
+          "value": 0.2702702702702702
+        },
+        {
+          "week": 9,
+          "source_week": 8,
+          "value": 0.3076923076923077
+        }
+      ],
+      "first_drift_alert": {
+        "week": 6,
+        "source_week": 5,
+        "value": 0.2857142857142857
+      },
+      "detection_delay_weeks": 1
+    }
+  }
+}

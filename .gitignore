@@ -1,0 +1,11 @@
+.venv/
+venv/
+__pycache__/
+.cache/
+.medmnist/
+data/
+outputs/
+*.npz
+*.pt
+*.pth
+*.safetensors
